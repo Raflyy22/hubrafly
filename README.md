@@ -1,18 +1,26 @@
-# Rapzpedia Script V1
+# Rapzpedia Script — V2 UI/UX
 
-Frontend static untuk Netlify dengan HTML, CSS, JavaScript ES Modules, JSON, dan LocalStorage.
+Upgrade V2 fokus pada UI/UX dan pengalaman discovery script dengan tetap memakai LocalStorage.
 
-## Jalankan
-Upload folder ini ke repository GitHub lalu deploy ke Netlify. Tidak membutuhkan build command.
+## Yang ditambahkan
+- Homepage/dashboard baru dengan hero search.
+- Search suggestion berdasarkan nama, game, kategori, subkategori, versi, deskripsi, dan tag.
+- Quick filter: Semua, Free Fire, Mobile Legends, VIP, Favorit.
+- Filter game + kategori + sorting terbaru/terlama/like/view/download.
+- Reset filter dan empty state yang lebih informatif.
+- Script card premium dengan tag, statistik, favorite, dan waktu update.
+- Script detail yang lebih lengkap: breadcrumb, metadata, tag, download center, share, favorite, related scripts.
+- Riwayat script yang baru dilihat.
+- Favorite per user menggunakan LocalStorage.
+- Profile dengan tab Overview, Favorit, dan Riwayat.
+- Statistik download pada script.
+- Mobile-first responsive layout.
+- Micro-interaction dan animasi card.
 
-## Demo Admin
-- Email: `admin@rapzpedia.local`
-- Password: `RapzAdmin@2026`
-- PIN: `2486`
+## Menjalankan
+Tidak membutuhkan build step. Buka `index.html` atau deploy folder ini ke Netlify sebagai static site.
 
-Ganti kredensial demo sebelum penggunaan nyata.
+## Catatan LocalStorage
+Data user, script, favorite, history, notifikasi, dan session masih lokal di browser. Karena itu data tidak tersinkron antar perangkat.
 
-## Catatan penting
-V1 adalah prototype LocalStorage. Data akun/script/category/support berada di browser. Chat hanya dapat disimulasikan pada tab/browser yang memiliki LocalStorage yang sama; ini bukan realtime lintas perangkat.
-
-Untuk produksi, pindahkan authentication, user data, script data, VIP, chat realtime, dan image storage ke backend/database. Jangan menaruh secret admin di frontend produksi.
+Support chat realtime, autentikasi produksi, VIP lintas perangkat, database, dan permission download aman perlu backend pada tahap berikutnya.
