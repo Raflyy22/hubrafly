@@ -1,0 +1,5 @@
+import {seed,authenticate,setSession} from "./auth.js";import { $, toast } from "./utils.js";import {createCaptcha,captchaValid} from "./captcha.js";
+await seed();createCaptcha($("#captchaQuestion"));
+$("#refreshCaptcha").onclick=()=>createCaptcha($("#captchaQuestion"));
+document.querySelectorAll(".password-toggle").forEach(b=>b.onclick=()=>{const i=$("#"+b.dataset.target);i.type=i.type==="password"?"text":"password";b.textContent=i.type==="password"?"Tampilkan":"Sembunyikan"});
+$("#loginForm").onsubmit=async e=>{e.preventDefault();const m=$("#formMessage");m.textContent="";try{if(!captchaValid($("#captchaAnswer").value))throw new Error("Captcha salah.");const r=await authenticate($("#email").value,$("#password").value);if(r.type==="admin"){const pin=prompt("Masukkan PIN Admin");if(pin!=="2486")throw new Error("PIN admin salah.");setSession({type:"admin",email:r.email,loginAt:Date.now()});location.href="pages/admin.html"}else{setSession({type:"user",userId:r.user.id,loginAt:Date.now()});location.href="pages/user.html"}}catch(err){m.textContent=err.message;m.className="form-message error";createCaptcha($("#captchaQuestion"));$("#captchaAnswer").value=""}};
