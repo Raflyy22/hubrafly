@@ -1,0 +1,12 @@
+[
+  {
+    "id": "free-fire",
+    "name": "Free Fire",
+    "icon": "FF"
+  },
+  {
+    "id": "mobile-legends",
+    "name": "Mobile Legends",
+    "icon": "ML"
+  }
+]

@@ -1,1 +1,8 @@
-
+{
+  "appName": "Rapzpedia Script",
+  "version": "1.0.0",
+  "storage": "localStorage",
+  "vipDurationDays": 30,
+  "supportMode": "localStorage",
+  "productionNote": "Realtime lintas perangkat membutuhkan backend."
+}
