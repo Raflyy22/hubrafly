@@ -1,0 +1,14 @@
+{
+  "games": [
+    {
+      "id": "free-fire",
+      "name": "Free Fire",
+      "icon": "\ud83d\udd25"
+    },
+    {
+      "id": "mobile-legends",
+      "name": "Mobile Legends",
+      "icon": "\u2694\ufe0f"
+    }
+  ]
+}
