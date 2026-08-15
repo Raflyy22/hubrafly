@@ -1,0 +1,1 @@
+const Storage={get(k,f=null){try{const v=localStorage.getItem(k);return v?JSON.parse(v):f}catch(e){return f}},set(k,v){localStorage.setItem(k,JSON.stringify(v))},remove(k){localStorage.removeItem(k)},clear(){localStorage.clear()}};
