@@ -1,8 +1,15 @@
-<!doctype html>
-<html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Login • GameConfig</title><link rel="stylesheet" href="css/main.css"><link rel="stylesheet" href="css/auth.css"></head>
-<body><main class="auth-wrap"><section class="auth-card"><a class="brand" href="index.html"><span>GC</span> GameConfig</a>
-<h1>Selamat datang</h1><p class="muted">Masuk ke dashboard konfigurasi Anda.</p>
-<form id="loginForm"><label>Username<input id="username" required autocomplete="username"></label><label>Password<input id="password" type="password" required autocomplete="current-password"></label><button class="btn primary full">Masuk</button></form>
-<div id="msg" class="notice"></div><p class="hint">Demo admin: <b>admin</b> / <b>admin123</b><br>Demo user: <b>user</b> / <b>user123</b></p>
-</section></main><script src="js/core/storage.js"></script><script src="js/core/auth.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="id"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Masuk — Rapzpedia</title>
+<link rel="stylesheet" href="css/reset.css"><link rel="stylesheet" href="css/variables.css"><link rel="stylesheet" href="css/global.css"><link rel="stylesheet" href="css/components.css"><link rel="stylesheet" href="css/auth.css">
+</head><body class="auth-page"><main class="auth-shell"><a class="brand auth-brand" href="index.html"><span class="brand-mark">R</span><span>Rapzpedia<span class="brand-muted"> Script</span></span></a>
+<section class="auth-card glass"><div class="auth-heading"><div class="eyebrow">WELCOME BACK</div><h1>Masuk ke akun</h1><p>User dan admin menggunakan halaman login yang sama.</p></div>
+<form id="loginForm" novalidate>
+<label>Email<input id="email" type="email" autocomplete="email" placeholder="nama@email.com" required></label>
+<label>Password<div class="password-wrap"><input id="password" type="password" autocomplete="current-password" placeholder="Masukkan password" required><button type="button" class="password-toggle" data-target="password">Tampilkan</button></div></label>
+<div class="captcha-row"><div><span class="label">Captcha</span><div id="captchaQuestion" class="captcha-box">—</div></div><div><span class="label">Jawaban</span><input id="captchaAnswer" inputmode="numeric" placeholder="Hasil" required></div><button type="button" id="refreshCaptcha" class="icon-btn" title="Captcha baru">↻</button></div>
+<div id="formMessage" class="form-message"></div><button class="btn btn-primary btn-block btn-lg" type="submit">Masuk <span>→</span></button>
+</form><div class="auth-footer">Belum punya akun? <a href="register.html">Daftar sekarang</a></div></section>
+<p class="security-note">Demo V1 menggunakan LocalStorage. Jangan gunakan kredensial produksi.</p>
+</main><script type="module" src="js/core/auth-page.js"></script></body></html>
