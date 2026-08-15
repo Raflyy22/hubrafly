@@ -1,0 +1,1 @@
+{"indexes":[{"collectionGroup":"supportThreads","queryScope":"COLLECTION","fields":[{"fieldPath":"updatedAt","order":"DESCENDING"}]}],"fieldOverrides":[]}
