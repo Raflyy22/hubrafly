@@ -1,26 +1,32 @@
-# Rapzpedia Script — V2 UI/UX
+# Rapzpedia V4 — Admin System + Firebase
 
-Upgrade V2 fokus pada UI/UX dan pengalaman discovery script dengan tetap memakai LocalStorage.
+Upgrade V3 → V4 dengan Firebase Authentication + Cloud Firestore.
 
-## Yang ditambahkan
-- Homepage/dashboard baru dengan hero search.
-- Search suggestion berdasarkan nama, game, kategori, subkategori, versi, deskripsi, dan tag.
-- Quick filter: Semua, Free Fire, Mobile Legends, VIP, Favorit.
-- Filter game + kategori + sorting terbaru/terlama/like/view/download.
-- Reset filter dan empty state yang lebih informatif.
-- Script card premium dengan tag, statistik, favorite, dan waktu update.
-- Script detail yang lebih lengkap: breadcrumb, metadata, tag, download center, share, favorite, related scripts.
-- Riwayat script yang baru dilihat.
-- Favorite per user menggunakan LocalStorage.
-- Profile dengan tab Overview, Favorit, dan Riwayat.
-- Statistik download pada script.
-- Mobile-first responsive layout.
-- Micro-interaction dan animasi card.
+## Fitur V4
+- Firebase Email/Password Authentication
+- Admin role berbasis `admins/{uid}`
+- Admin PIN hash
+- Dashboard analytics
+- User management
+- Ban 7/14/30/99 hari
+- Permanent ban
+- Reset account
+- VIP 30 hari
+- Script CRUD Firestore
+- Script enable/disable
+- Featured
+- Multi download links
+- Games/category manager
+- Report moderation
+- Realtime support via Firestore `onSnapshot`
+- Admin PIN change
+- Firestore security rules
+- Storage rules untuk attachment/script
 
-## Menjalankan
-Tidak membutuhkan build step. Buka `index.html` atau deploy folder ini ke Netlify sebagai static site.
+## Konfigurasi
+Lihat `firebase/setup.md` lalu isi `js/firebase/config.js`.
 
-## Catatan LocalStorage
-Data user, script, favorite, history, notifikasi, dan session masih lokal di browser. Karena itu data tidak tersinkron antar perangkat.
+> Firebase config web boleh berada di frontend. Yang tidak boleh dipublikasikan adalah service-account private key/secret backend.
 
-Support chat realtime, autentikasi produksi, VIP lintas perangkat, database, dan permission download aman perlu backend pada tahap berikutnya.
+## Catatan arsitektur
+V4 sudah memindahkan autentikasi utama dan admin data ke Firebase. Beberapa halaman V3 lama masih memiliki state UI LocalStorage seperti favorite/history. Pada V5 kita dapat memindahkan seluruh user data, VIP, favorite, history, notification, support, dan download tracking ke Firestore sehingga lintas perangkat.
